@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Alert View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="AlertViewController" customModule="LocalNotificationPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="5Cz-gL-Afi">
+                                <rect key="frame" x="38" y="283" width="338" height="330"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ER-di-I95">
+                                        <rect key="frame" x="0.0" y="0.0" width="338" height="30"/>
+                                        <state key="normal" title="未発行の通知"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFj-Yi-bGV">
+                                        <rect key="frame" x="0.0" y="60" width="338" height="30"/>
+                                        <state key="normal" title="発行済みの通知"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="go1-Rz-Ya3">
+                                        <rect key="frame" x="0.0" y="120" width="338" height="30"/>
+                                        <state key="normal" title="未発行の通知を削除"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSq-gz-UAu">
+                                        <rect key="frame" x="0.0" y="180" width="338" height="30"/>
+                                        <state key="normal" title="発行済みの通知を削除"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8e-H1-juw">
+                                        <rect key="frame" x="0.0" y="240" width="338" height="30"/>
+                                        <state key="normal" title="フォアグラウンド通知（5秒後) 繰り返しなし"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ML-1V-i9H">
+                                        <rect key="frame" x="0.0" y="300" width="338" height="30"/>
+                                        <state key="normal" title="バックグラウンド通知（毎日19時）繰り返しあり"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5Cz-gL-Afi" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="9Yf-ff-D4H"/>
+                            <constraint firstItem="5Cz-gL-Afi" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="PtY-h3-JBo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundAlertButton" destination="4ML-1V-i9H" id="HjE-dT-bcL"/>
+                        <outlet property="deleteDeleveredAlertButton" destination="TSq-gz-UAu" id="ruO-MA-aUZ"/>
+                        <outlet property="deletePendingAlertButton" destination="go1-Rz-Ya3" id="ckM-lC-87l"/>
+                        <outlet property="deliveredAlertButton" destination="MFj-Yi-bGV" id="knI-2l-5Ww"/>
+                        <outlet property="foregroundAlertButton" destination="c8e-H1-juw" id="qat-Dg-wyJ"/>
+                        <outlet property="pendingAlertButton" destination="7ER-di-I95" id="m3N-XQ-YV2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54" y="63"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
